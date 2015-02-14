@@ -9,14 +9,15 @@
 - There are already files in this folder,namely :
   1. 'README.txt'(the original description of the data set)
   2. 'features_info.txt'(Description of features and variables)
-  3. 'activity_labels.txt'(List of the activities subjects exectuted during a day)
+  3. 'activity_labels.txt'(List of the activities subjects executed during a day)
   4. 'features.txt' (The complete list of variables of each feature vector)
 - Copy here the script file (run_analysis.R)
  To use it type in the command line >source("run_analysis.R")
 ###Script description 
 - This script first loads the data from the files,into temporary data frames,and joins them with rbind())
  creating a 10299x561 data frame, as in the original description("Number of Instances: 10299" and "Number of Attributes: 561"),
- a 10299x1 data frame with subject IDs, and a 10299x1 data frame with activity IDs. 
+ a 10299x1 data frame with subject IDs, and a 10299x1 data frame with activity IDs.
+"Number of Instances: recordings of 30 subjects performing activities of daily living while carrying a waist-mounted smartphone with embedded inertial sensors.Activities are divided into 6 categories.
 - Extracts only the measurements on the mean and standard deviation for each measurement. 
 - The result is a 10299x66 data frame, because only 66 out of 561 attributes are measurements on the mean and standard deviation.
 - Applies descriptive activity names to name the activities in the data set 
@@ -39,7 +40,7 @@
 - tgravityacc-mean-z
 - tbodyaccjerk-mean-x
 - tbodyaccjerk-mean-y.............
-
+Full explanation for these provided in the 'features_info.txt' . 
 - Creates a 2nd, independent tidy data set with the average of each measurement for each activity and each subject. 
 - Finally the result is saved as "TidySet.txt",containing subject IDs,activity names,and the averages for each 
  of the 66 attributes (thus making a size 180x68 data frame)
