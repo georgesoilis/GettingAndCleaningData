@@ -7,7 +7,7 @@
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 # Please keep directory structure as is after unzipping,
 # adding this file in the folder named "UCI HAR Dataset".
-# there are already 5 files in this folder,namely 
+# there are already 4 files in this folder,namely 
 # 1. 'README.txt'
 # 2. 'features_info.txt'
 # 3. 'activity_labels.txt'

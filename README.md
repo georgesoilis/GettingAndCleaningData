@@ -28,9 +28,17 @@ This repository contains the following files:
 					  each variable for each activity and each subject.
 				
 ##How to run the  run_analysis.R script :
-*	To run this script has to be present in the folder /UCI HAR Dataset.
+* Download the data set from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and unzip it.It will create a series of folder/files as follows: getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/......
+*	To run this script has to be present in the folder "/UCI HAR Dataset".
 	The folder structure should be maintained as is after unzipping the original data,and the run_analysis.R file 
 	should be copied into the /UCI HAR Dataset folder.
-*	Set your working directory with setwd(~/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset).
-*	use source("run_analysis.R") command in RStudio.
-*	Alternatively,open the file in RStudio and save it with the Source on Save box checked.
+*	Set your working directory with ```setwd(~/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset)```.
+*	use ```source("run_analysis.R")``` command in RStudio.(Alternatively,open the file in RStudio and click on save with the "Source on Save"" box checked).
+* After running,the script will produce a file "TidySet.txt" in the "/UCI HAR Dataset" directory.
+* To read the first lines of "TidySet.txt" use (in RStudio ,or R ):
+``` temp<-read.table("TidySet.txt",header=TRUE)
+```and then :
+```head(temp)
+```
+
+George Soilis,February,2015
