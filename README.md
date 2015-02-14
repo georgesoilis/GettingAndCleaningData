@@ -36,9 +36,12 @@ This repository contains the following files:
 *	use ```source("run_analysis.R")``` command in RStudio.(Alternatively,open the file in RStudio and click on save with the "Source on Save"" box checked).
 * After running,the script will produce a file "TidySet.txt" in the "/UCI HAR Dataset" directory.
 * To read the first lines of "TidySet.txt" use (in RStudio ,or R ):
-``` temp<-read.table("TidySet.txt",header=TRUE)
-```and then :
-```head(temp)
+``` 
+temp<-read.table("TidySet.txt",header=TRUE)
+```
+and then :
+```
+head(temp)
 ```
 
 George Soilis,February,2015
