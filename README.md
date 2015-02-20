@@ -1,47 +1,47 @@
-#Getting And Cleaning Data Project 
-##Repository for the Human Activity Recognition using Smartphones Course Project
+---
+output: html_document
+---
+##Getting And Cleaning Data Project 
+###Repository for the Human Activity Recognition using Smartphones Course Project
+This R script created for use on the dataset UCI HAR Dataset 
+Creates an output of a file containing the averages of each variable for
+each activity and each subject.
+The Human Activity Recognition database was built from the recordings of 30 subjects performing activities of daily living while carrying a waist-mounted smartphone with embedded inertial sensors.
+A full description of the original data is available at  <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones> 
+The source data for this project was downloaded from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> .
 
-The goal of this project is to prepare tidy data that can be used for later analysis from the 
-Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living
-while carrying a waist-mounted smartphone with embedded inertial sensors.
-The analysis.R results in a Tidy Data set,reduced  
+###This repository contains the following files:
 
+1. README.md   :This file describing the contents of this repo and how the script works
+2. CodeBook.md  :This file describes the variables,the data,and the transformations performed 
+3. run_analysis.R :The script that does the following:   
+      
+* Reads in the files      
+* Merges the training and the test sets to create one data set.   
+* Extracts only the measurements on the mean and standard deviation for each measurement.   
+* Uses descriptive activity names to name the activities in the data set   
+* Appropriately labels the data set with descriptive activity names.  
+* Creates a second, independent tidy data set with the average of each variable for each activity and each subject.    
 
-
-A full description is available at  <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones> 
-The source data for this project was downloaded from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
-
-This repository contains the following files:
-
-**1) README.md ** :This file describing the contents of this repo 
-                   and all the steps to recreate the results.
-	
-**2) CodeBook.md**:This file describes the variables,the data,and any transformations 
-					or work performed with the run_analysis.R script to clean up the data 
-	
-**3) run_analysis.R **:The script that does the following:
-					a)Merges the training and the test sets to create one data set.
-					b)Extracts only the measurements on the mean and standard deviation for each measurement.
-					c)Uses descriptive activity names to name the activities in the data set
-					d)Appropriately labels the data set with descriptive activity names.
-					e)Creates a second, independent tidy data set with the average of 
-					  each variable for each activity and each subject.
-				
-##How to run the  run_analysis.R script :
+###How to run the  run_analysis.R script :  
 * Download the data set from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and unzip it.It will create a series of folder/files as follows: getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/......
-*	To run this script has to be present in the folder "/UCI HAR Dataset".
-	The folder structure should be maintained as is after unzipping the original data,and the run_analysis.R file 
-	should be copied into the /UCI HAR Dataset folder.
-*	Set your working directory with ```setwd(~/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset)```.
-*	use ```source("run_analysis.R")``` command in RStudio.(Alternatively,open the file in RStudio and click on save with the "Source on Save"" box checked).
-* After running,the script will produce a file "TidySet.txt" in the "/UCI HAR Dataset" directory.
-* To read the first lines of "TidySet.txt" use (in RStudio ,or R ):
+*	Save this script file(run_analysis.r) in the top folder of those created during unzipping, 
+namely the folder:"getdata-projectfiles-UCI HAR Dataset". To run ,this script has to be in the folder "getdata-projectfiles-UCI HAR Dataset".(Please keep directory structure as is after unzipping.)  
+(As a pointer,in this folder you will see only one folder,"UCI HAR Dataset" and no files)
+*	Set your working directory the folder:"getdata-projectfiles-UCI HAR Dataset" with for example: 
+```setwd("~/Coursera/Getting and cleaning data/getdata-projectfiles-UCI HAR Dataset")``` if for example the downloaded file was unzipped in C:/My Documents/Coursera/Getting and Cleaning data/
+and your home directory (in RStudio) is My Documents).
+*	Type in the prompt  ```source("run_analysis.R")``` .
+(Alternatively,open the file in RStudio and click on save with the "Source on Save"" box checked).
+* After running,the script will produce a file "tidyData.txt"" in the "getdata-projectfiles-UCI HAR Dataset" directory.
+* The script then reads the output file "tidyData.txt" into RStudio and opens it for viewing.This behaviour can be changed by commenting out the last 2 lines of the script (if the user doesnt want to view the output or prefers to read it in him/herself.In this case,please use )
 ``` 
-temp<-read.table("TidySet.txt",header=TRUE)
+temp<-read.table("tidyData.txt" ,header=TRUE)
 ```
 and then :
 ```
-head(temp)
-```
+View(temp)
+```   
+note:Every effort has been made to clean up during and after running to preserve memory by default,so if the user wants to see the steps of the transormartion and not only the end result can comment out these lines,: 42,70,90,91 where the calls for the function rm() reside.
 
 George Soilis,February,2015
