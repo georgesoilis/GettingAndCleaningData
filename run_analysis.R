@@ -22,7 +22,7 @@
 require("data.table")
 require("reshape2")
 
-# read the data from the archive
+# read the data from the archives
 trainsubjectdt <- read.table ("UCI HAR Dataset/train/subject_train.txt")
 trainxdt <- read.table ( "UCI HAR Dataset/train/X_train.txt", header = FALSE)
 trainydt <- read.table ( "UCI HAR Dataset/train/y_train.txt", header = FALSE)
@@ -32,7 +32,7 @@ testxdt <- read.table ("UCI HAR Dataset/test/X_test.txt", header = FALSE)
 testydt <- read.table ("UCI HAR Dataset/test/y_test.txt", header = FALSE)
 
 # merge the training and the test sets to create one data set
-# we don't build the complete block here, since the variable names will change
+# we don't build the complete set here,since the variable names will change
 subjectdt <- rbind (trainsubjectdt, testsubjectdt)
 featuredatadt <- rbind (trainxdt, testxdt)
 activitydt <- rbind (trainydt, testydt)
@@ -68,7 +68,7 @@ names(selectedfeaturedt) <- gsub("BodyBody", "Body", names(selectedfeaturedt))
 # add the activities and subjects to the features, for the complete block
 selectedfeaturedt <- cbind(selectedfeaturedt, subjectdt, activitydt)
 
-rm (featuredatadt, subjectdt, activitydt)# free memory
+rm (featuredatadt, subjectdt, activitydt)# free memory.Comment out if you want to preserve them
 
 # Use descriptive activity names to name the activities in the data set
 # read the labels from file
@@ -87,11 +87,9 @@ tidydt <- dcast(moltendt, Subject + Activity ~ variable, mean)
 # Write the data to a txt file
 write.table (tidydt, file = "tidyData.txt", row.names = FALSE)
 message("Script finished, tidyData.txt  file produced in working directory.")
-# clean up .comment out if you want to preserve the temporary files
+# clean up .comment out if you want to preserve the temporary files for inspection
 rm(actlabels, moltendt, selectedfeaturedt, tidydt)
-rm(featurenames, measures)
+rm(featurenames, measures,varnamesdt)
 #read and open output for viewing Please comment out the 2 lines below to stop autoviewing
 temp<-read.table("tidyData.txt",header=T)
 View(temp)
-
-======================================================================
