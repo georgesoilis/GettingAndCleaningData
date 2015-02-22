@@ -24,7 +24,17 @@ The source data for this project was downloaded from <https://d396qusza40orc.clo
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject.    
 
 ###How to run the  run_analysis.R script :  
-* Download the data set from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and unzip it.It will create a series of folder/files as follows: getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/......
+
+**short version for use with RStudio (included in script):**  
+* Download the data set from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and unzip it.It will create a series of folder/files as follows: getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/...
+* Unzip the downloaded file with the UCI HAR Dataset(keep folder structure intact)  
+* Open RStudio and navigate to the "getdata-projectfiles-UCI HAR Dataset"" folder with the RStudio file explorer.  
+* Set as working directory this folder("Set As Working Directory" option from the RStudio file explorer "More" menu,or with the setwd() in R prompt.  
+* Download,save and open the script in Rstudio ,check the "Source on Save"" box on the editor toolbar and click the icon Save.The script will start running,and alert the user when finished printing the message "Script finished, tidyData.txt  file produced in working directory."
+* Alternatively ,type > source(run_analysis.R)
+* After finishing ,the output opens with View().If you want this behaviour stopped,please comment out the last 2 lines.
+
+** Detailed instructions for R (and RStudio)**  
 *	Save this script file(run_analysis.r) in the top folder of those created during unzipping, 
 namely the folder:"getdata-projectfiles-UCI HAR Dataset". To run ,this script has to be in the folder "getdata-projectfiles-UCI HAR Dataset".(Please keep directory structure as is after unzipping.)  
 (As a pointer,in this folder you will see only one folder,"UCI HAR Dataset" and no files)
